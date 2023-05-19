@@ -1,5 +1,5 @@
-'use client'
+'use client';
 
-import { Switch } from "@material-tailwind/react"
+import { Switch } from '@material-tailwind/react';
 
-export { Switch }
+export { Switch };
