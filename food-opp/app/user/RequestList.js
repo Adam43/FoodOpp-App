@@ -1,6 +1,6 @@
 'use client'
 
-import { Switch } from '@material-tailwind/react';
+import { Switch } from './Switch';
 
 const dummyCard = <>CARD</>;
 
