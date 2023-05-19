@@ -15,7 +15,6 @@ import {
 import React from 'react';
 import Cardcomponent from './Cardcomponent';
 
-const dummyCard = <>CARD</>;
 
 const RequestList = ({}) => {
   const expiredRequests = getUserActiveRequests({ userId: 123 });
@@ -81,7 +80,6 @@ const RequestList = ({}) => {
           ))}
         </TabsBody>
       </Tabs>
-      {dummyCard}
     </div>
   );
 };
