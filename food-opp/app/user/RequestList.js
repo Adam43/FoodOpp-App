@@ -13,12 +13,29 @@ import {
   TabPanel,
 } from '@material-tailwind/react';
 import React from 'react';
+import Cardcomponent from './Cardcomponent';
 
 const dummyCard = <>CARD</>;
 
 const RequestList = ({}) => {
-  const expiredCards = getUserActiveRequests({ userId: 123 });
-  const activeCards = getUserExpiredRequests({ userId: 123 });
+  const expiredRequests = getUserActiveRequests({ userId: 123 });
+  const activeRequests = getUserExpiredRequests({ userId: 123 });
+  const activeCards = activeRequests.map((request) => {
+    return <Cardcomponent
+      name={request.name}
+      status={request.status}
+      createdAt={request.createdAt}
+      expiresAt={request.expiresAt}
+      groupSize={request.groupSize}
+      type={request.type}
+      notes={request.notes} />
+
+  })
+
+  const expiredCards = expiredRequests.map((request) => {
+    return <Cardcomponent
+      name={request.name} />
+  })
 
   const tabs = [
     {
@@ -49,9 +66,9 @@ const RequestList = ({}) => {
           ))}
         </TabsHeader>
         <TabsBody>
-          {tabs.map(({ value, desc }) => (
+          {tabs.map(({ value, cards }) => (
             <TabPanel key={value} value={value}>
-              {desc}
+              {cards}
             </TabPanel>
           ))}
         </TabsBody>
