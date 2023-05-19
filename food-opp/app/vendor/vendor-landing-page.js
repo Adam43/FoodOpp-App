@@ -1,4 +1,6 @@
+"use client";
 import Image from "next/image"
+import { useState } from "react"
 
 export const VendorLandingPage = () => {
     return (
@@ -10,14 +12,22 @@ export const VendorLandingPage = () => {
 }
 
 export const MapComponent = () => {
+    const [mapClicked, setMapClicked] = useState(false);
+
+    const mapClickedHandler = () => {
+        setMapClicked(!mapClicked);
+    }
+
     return (
         <>
+        
             <Image
-              src="/map_image_1.png"
+              src={mapClicked ? "/map_image_1.png" : "/map_image_2.png"}
               alt="Vercel Logo"
               className="dark:invert"
-              width={100}
-              height={24}
+              width={200}
+              height={300}
+              onClick={mapClickedHandler}
               priority
             />
 
@@ -27,13 +37,13 @@ export const MapComponent = () => {
 
 export const DescriptionComponent = () => {
     return (
-        <>
+        <div className="text-white bg-green-700">
         <h1>Currently clicked name</h1>
-                <p>Address</p>
-                <p>Request type</p>
-                <p>People count</p>
-                <p>Expiry</p>
-                <button>Button</button>
-        </>
+                <p>Address: </p>
+                <p>Request type: </p>
+                <p>Request count</p>
+                <p>Expiry: </p>
+                <button className="text-white bg-green-700 rounded-full">Button</button>
+        </div>
     )
 }
