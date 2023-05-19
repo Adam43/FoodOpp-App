@@ -4,6 +4,5 @@ export const getUserProfile = ({ id }) => {
   return {
     name: 'Bob',
     email: 'bob@gmail.com',
-  }
-}
-
+  };
+};
