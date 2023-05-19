@@ -1,8 +1,6 @@
 'use client';
 
-import {
-  getAllEvents,
-} from '@/src/requests/requests';
+import { getAllEvents } from '@/src/requests/requests';
 import { CheckCircleIcon, ClockIcon } from '@heroicons/react/24/solid';
 import {
   Tabs,
@@ -44,23 +42,26 @@ const RequestList = ({}) => {
   //     notes={request.notes} />
   // })
   const allEvents = getAllEvents({ userId: 123 });
-  const activeCards = allEvents.filter((request) => {
-    return new Date(request.expiresAt) >= Date.now()
-  }).map((request) => {
-    return (
-      <Cardcomponent
-        key={request.id}
-        name={request.name}
-        status={request.status}
-        createdAt={request.createdAt}
-        expiresAt={request.expiresAt}
-        groupSize={request.groupSize}
-        type={request.type}
-        notes={request.notes}
-      />
-    );
-  });
+  const activeCards = allEvents
+    .filter((request) => {
+      return new Date(request.expiresAt) >= Date.now();
+    })
+    .map((request) => {
+      return (
+        <Cardcomponent
+          key={request.id}
+          name={request.name}
+          status={request.status}
+          createdAt={request.createdAt}
+          expiresAt={request.expiresAt}
+          groupSize={request.groupSize}
+          type={request.type}
+          notes={request.notes}
+        />
+      );
+    });
 
+// <<<<<<< HEAD
   const expiredCards = allEvents.filter((request) => {
     return new Date(request.expiresAt) < Date.now()
   }).map((request) => {
@@ -78,6 +79,26 @@ const RequestList = ({}) => {
     );
   });
 // >>>>>>> 760e3b5 (filter events by time)
+// =======
+//   const expiredCards = allEvents
+//     .filter((request) => {
+//       return new Date(request.expiresAt) < Date.now();
+//     })
+//     .map((request) => {
+//       return (
+//         <Cardcomponent
+//           key={request.id}
+//           name={request.name}
+//           status={request.status}
+//           createdAt={request.createdAt}
+//           expiresAt={request.expiresAt}
+//           groupSize={request.groupSize}
+//           type={request.type}
+//           notes={request.notes}
+//         />
+//       );
+//     });
+// >>>>>>> 73907b1 (adding skeleton file for new request)
 
   const tabs = [
     {
