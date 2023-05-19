@@ -5,8 +5,9 @@ const dummyCard = <>CARD</>;
 const RequestList = ({}) => {
   return (
     <div>
-      <div>
-        <Switch />
+      <div className='flex w-full justify-end gap-2'>
+        <div className='text-sm'>History</div>
+        <Switch className='' />
       </div>
       {dummyCard}
     </div>
