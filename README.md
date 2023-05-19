@@ -13,13 +13,13 @@ The FoodOpp App is built using the following technologies:
 Front-end:
 * JavaScript
 * React.js
+* NextJS
 
 Back-end:
 
-* Python
-* Django
+* Firebase
 
 
-The combination of JavaScript and React.js is used to develop the front-end of the application, providing an interactive and user-friendly interface for users to suggest food business opportunities. On the back-end, Python and Django are utilized to handle the server-side logic, data storage, and management of the application.
+The combination of JavaScript and React.js is used to develop the front-end of the application, providing an interactive and user-friendly interface for users to suggest food business opportunities. On the back-end, Firebase provides a database and cloud functions with minimal setups.
 
 The tech stack mentioned above ensures a robust and efficient development process, enabling the FoodOpp App to deliver a seamless user experience while meeting the requirements of food vendors searching for potential locations.
