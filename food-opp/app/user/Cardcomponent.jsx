@@ -13,7 +13,7 @@ export default function Cardcomponent({
     <div className="flex justify-center mt-40 h-screen px-5">
       <div className="bg-[#a9d4ff] w-full md:w-64 h-80 rounded-2xl p-4 md:flex-row justify-between">
         <div className="flex flex-row md:flex-row px-5 mt-5">
-          <h1 class="font-bold text-2xl border">{name}</h1>
+          <h1 className="font-bold text-2xl border">{name}</h1>
 
           <div className="flex items-center ml-4">
             <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
