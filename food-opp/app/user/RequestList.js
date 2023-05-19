@@ -22,6 +22,7 @@ const RequestList = ({}) => {
   const activeRequests = getUserExpiredRequests({ userId: 123 });
   const activeCards = activeRequests.map((request) => {
     return <Cardcomponent
+      key={request.id}
       name={request.name}
       status={request.status}
       createdAt={request.createdAt}
@@ -34,7 +35,14 @@ const RequestList = ({}) => {
 
   const expiredCards = expiredRequests.map((request) => {
     return <Cardcomponent
-      name={request.name} />
+      key={request.id}
+      name={request.name}
+      status={request.status}
+      createdAt={request.createdAt}
+      expiresAt={request.expiresAt}
+      groupSize={request.groupSize}
+      type={request.type}
+      notes={request.notes} />
   })
 
   const tabs = [
