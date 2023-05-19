@@ -1,8 +1,7 @@
 'use client';
 
 import {
-  getUserActiveRequests,
-  getUserExpiredRequests,
+  getAllEvents,
 } from '@/src/requests/requests';
 import { CheckCircleIcon, ClockIcon } from '@heroicons/react/24/solid';
 import {
@@ -16,9 +15,10 @@ import React from 'react';
 import Cardcomponent from './Cardcomponent';
 
 const RequestList = ({}) => {
-  const expiredRequests = getUserActiveRequests({ userId: 123 });
-  const activeRequests = getUserExpiredRequests({ userId: 123 });
-  const activeCards = activeRequests.map((request) => {
+  const allEvents = getAllEvents({ userId: 123 });
+  const activeCards = allEvents.filter((request) => {
+    return new Date(request.expiresAt) >= Date.now()
+  }).map((request) => {
     return (
       <Cardcomponent
         key={request.id}
@@ -33,7 +33,9 @@ const RequestList = ({}) => {
     );
   });
 
-  const expiredCards = expiredRequests.map((request) => {
+  const expiredCards = allEvents.filter((request) => {
+    return new Date(request.expiresAt) < Date.now()
+  }).map((request) => {
     return (
       <Cardcomponent
         key={request.id}
