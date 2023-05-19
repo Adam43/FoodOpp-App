@@ -1,11 +1,16 @@
-const dummyCard = (
-  <>CARD</>
-)
+import { Switch } from '@material-tailwind/react';
 
-const RequestList = ({ }) => {
-  return <div>
-  {dummyCard}
-  </div>
-}
+const dummyCard = <>CARD</>;
 
-export default RequestList
+const RequestList = ({}) => {
+  return (
+    <div>
+      <div>
+        <Switch />
+      </div>
+      {dummyCard}
+    </div>
+  );
+};
+
+export default RequestList;
