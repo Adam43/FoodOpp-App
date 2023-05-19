@@ -1,8 +1,6 @@
 'use client';
 
-import {
-  getAllEvents,
-} from '@/src/requests/requests';
+import { getAllEvents } from '@/src/requests/requests';
 import { CheckCircleIcon, ClockIcon } from '@heroicons/react/24/solid';
 import {
   Tabs,
@@ -16,39 +14,43 @@ import Cardcomponent from './Cardcomponent';
 
 const RequestList = ({}) => {
   const allEvents = getAllEvents({ userId: 123 });
-  const activeCards = allEvents.filter((request) => {
-    return new Date(request.expiresAt) >= Date.now()
-  }).map((request) => {
-    return (
-      <Cardcomponent
-        key={request.id}
-        name={request.name}
-        status={request.status}
-        createdAt={request.createdAt}
-        expiresAt={request.expiresAt}
-        groupSize={request.groupSize}
-        type={request.type}
-        notes={request.notes}
-      />
-    );
-  });
+  const activeCards = allEvents
+    .filter((request) => {
+      return new Date(request.expiresAt) >= Date.now();
+    })
+    .map((request) => {
+      return (
+        <Cardcomponent
+          key={request.id}
+          name={request.name}
+          status={request.status}
+          createdAt={request.createdAt}
+          expiresAt={request.expiresAt}
+          groupSize={request.groupSize}
+          type={request.type}
+          notes={request.notes}
+        />
+      );
+    });
 
-  const expiredCards = allEvents.filter((request) => {
-    return new Date(request.expiresAt) < Date.now()
-  }).map((request) => {
-    return (
-      <Cardcomponent
-        key={request.id}
-        name={request.name}
-        status={request.status}
-        createdAt={request.createdAt}
-        expiresAt={request.expiresAt}
-        groupSize={request.groupSize}
-        type={request.type}
-        notes={request.notes}
-      />
-    );
-  });
+  const expiredCards = allEvents
+    .filter((request) => {
+      return new Date(request.expiresAt) < Date.now();
+    })
+    .map((request) => {
+      return (
+        <Cardcomponent
+          key={request.id}
+          name={request.name}
+          status={request.status}
+          createdAt={request.createdAt}
+          expiresAt={request.expiresAt}
+          groupSize={request.groupSize}
+          type={request.type}
+          notes={request.notes}
+        />
+      );
+    });
 
   const tabs = [
     {
