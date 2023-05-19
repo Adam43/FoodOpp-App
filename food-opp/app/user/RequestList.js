@@ -77,7 +77,7 @@ const RequestList = ({}) => {
       />
     );
   });
->>>>>>> 760e3b5 (filter events by time)
+// >>>>>>> 760e3b5 (filter events by time)
 
   const tabs = [
     {
