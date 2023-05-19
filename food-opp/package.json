@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "eslint --ext .js,.ts,.jsx,.tsx --fix .",
+    "lint:fix": "eslint --ext .js,.ts,.jsx,.tsx --fix . && npm run format:fix",
     "format": "prettier --check .",
     "format:fix": "prettier --write ."
   },
@@ -15,6 +15,7 @@
     "@heroicons/react": "^2.0.18",
     "@material-tailwind/react": "^2.0.1",
     "autoprefixer": "10.4.14",
+    "bootstrap": "^5.3.0-alpha3",
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.3",
     "next": "13.4.3",

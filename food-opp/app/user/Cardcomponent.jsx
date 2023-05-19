@@ -7,7 +7,7 @@ export default function Cardcomponent({
   expiresAt,
   groupSize,
   type,
-  notes
+  notes,
 }) {
   return (
     <div className="flex justify-center mt-40 h-screen px-5">
@@ -47,11 +47,11 @@ export default function Cardcomponent({
           </div>
 
           <div>
-            <h1 className='ml-5'>Type</h1>
+            <h1 className="ml-5">Type</h1>
           </div>
 
           <div>
-            <h1 className='ml-5'>Notes</h1>
+            <h1 className="ml-5">Notes</h1>
           </div>
         </div>
       </div>
