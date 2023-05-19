@@ -15,34 +15,38 @@ import {
 import React from 'react';
 import Cardcomponent from './Cardcomponent';
 
-
 const RequestList = ({}) => {
   const expiredRequests = getUserActiveRequests({ userId: 123 });
   const activeRequests = getUserExpiredRequests({ userId: 123 });
   const activeCards = activeRequests.map((request) => {
-    return <Cardcomponent
-      key={request.id}
-      name={request.name}
-      status={request.status}
-      createdAt={request.createdAt}
-      expiresAt={request.expiresAt}
-      groupSize={request.groupSize}
-      type={request.type}
-      notes={request.notes} />
-
-  })
+    return (
+      <Cardcomponent
+        key={request.id}
+        name={request.name}
+        status={request.status}
+        createdAt={request.createdAt}
+        expiresAt={request.expiresAt}
+        groupSize={request.groupSize}
+        type={request.type}
+        notes={request.notes}
+      />
+    );
+  });
 
   const expiredCards = expiredRequests.map((request) => {
-    return <Cardcomponent
-      key={request.id}
-      name={request.name}
-      status={request.status}
-      createdAt={request.createdAt}
-      expiresAt={request.expiresAt}
-      groupSize={request.groupSize}
-      type={request.type}
-      notes={request.notes} />
-  })
+    return (
+      <Cardcomponent
+        key={request.id}
+        name={request.name}
+        status={request.status}
+        createdAt={request.createdAt}
+        expiresAt={request.expiresAt}
+        groupSize={request.groupSize}
+        type={request.type}
+        notes={request.notes}
+      />
+    );
+  });
 
   const tabs = [
     {
