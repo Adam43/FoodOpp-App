@@ -1,6 +1,4 @@
-'use client'
-
-import { Switch } from './Switch';
+import { Switch } from 'components/Switch/Switch';
 
 const dummyCard = <>CARD</>;
 
