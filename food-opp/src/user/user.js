@@ -1,6 +1,9 @@
 export const getUserProfile = ({ id }) => {
   // TODO
 
-  return 'Bob'
+  return {
+    name: 'Bob',
+    email: 'bob@gmail.com',
+  }
 }
 
