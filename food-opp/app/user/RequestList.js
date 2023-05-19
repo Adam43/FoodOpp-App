@@ -1,8 +1,7 @@
 'use client';
 
 import {
-  getUserActiveRequests,
-  getUserExpiredRequests,
+  getAllEvents,
 } from '@/src/requests/requests';
 import { CheckCircleIcon, ClockIcon } from '@heroicons/react/24/solid';
 import {
@@ -17,32 +16,68 @@ import Cardcomponent from './Cardcomponent';
 
 
 const RequestList = ({}) => {
-  const expiredRequests = getUserActiveRequests({ userId: 123 });
-  const activeRequests = getUserExpiredRequests({ userId: 123 });
-  const activeCards = activeRequests.map((request) => {
-    return <Cardcomponent
-      key={request.id}
-      name={request.name}
-      status={request.status}
-      createdAt={request.createdAt}
-      expiresAt={request.expiresAt}
-      groupSize={request.groupSize}
-      type={request.type}
-      notes={request.notes} />
 
-  })
+  // const expiredRequests = getUserActiveRequests({ userId: 123 });
+  // const activeRequests = getUserExpiredRequests({ userId: 123 });
+  // const activeCards = activeRequests.map((request) => {
+  //   return <Cardcomponent
+  //     key={request.id}
+  //     name={request.name}
+  //     status={request.status}
+  //     createdAt={request.createdAt}
+  //     expiresAt={request.expiresAt}
+  //     groupSize={request.groupSize}
+  //     type={request.type}
+  //     notes={request.notes} />
 
-  const expiredCards = expiredRequests.map((request) => {
-    return <Cardcomponent
-      key={request.id}
-      name={request.name}
-      status={request.status}
-      createdAt={request.createdAt}
-      expiresAt={request.expiresAt}
-      groupSize={request.groupSize}
-      type={request.type}
-      notes={request.notes} />
-  })
+  // })
+
+  // const expiredCards = expiredRequests.map((request) => {
+  //   return <Cardcomponent
+  //     key={request.id}
+  //     name={request.name}
+  //     status={request.status}
+  //     createdAt={request.createdAt}
+  //     expiresAt={request.expiresAt}
+  //     groupSize={request.groupSize}
+  //     type={request.type}
+  //     notes={request.notes} />
+  // })
+  const allEvents = getAllEvents({ userId: 123 });
+  const activeCards = allEvents.filter((request) => {
+    return new Date(request.expiresAt) >= Date.now()
+  }).map((request) => {
+    return (
+      <Cardcomponent
+        key={request.id}
+        name={request.name}
+        status={request.status}
+        createdAt={request.createdAt}
+        expiresAt={request.expiresAt}
+        groupSize={request.groupSize}
+        type={request.type}
+        notes={request.notes}
+      />
+    );
+  });
+
+  const expiredCards = allEvents.filter((request) => {
+    return new Date(request.expiresAt) < Date.now()
+  }).map((request) => {
+    return (
+      <Cardcomponent
+        key={request.id}
+        name={request.name}
+        status={request.status}
+        createdAt={request.createdAt}
+        expiresAt={request.expiresAt}
+        groupSize={request.groupSize}
+        type={request.type}
+        notes={request.notes}
+      />
+    );
+  });
+>>>>>>> 760e3b5 (filter events by time)
 
   const tabs = [
     {
