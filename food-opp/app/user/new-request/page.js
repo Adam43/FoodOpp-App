@@ -7,6 +7,7 @@ import moment from 'moment';
 import { addEventEndpoint } from '@/src/consts/firebase';
 import toast, { Toaster } from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
+import { ArrowLeftIcon } from '@heroicons/react/24/solid';
 
 const NewRequest = ({}) => {
   const [name, setName] = useState('');
@@ -58,9 +59,14 @@ const NewRequest = ({}) => {
     <div className="flex flex-col p-4 w-full items-center">
       <Toaster />
       <Card color="transparent" shadow={false}>
-        <Typography variant="h4" color="blue-gray">
-          Create New Request
-        </Typography>
+        <div className="flex">
+          <Link href="/user" className="w-6 h-6 mr-auto">
+            <ArrowLeftIcon />
+          </Link>
+          <Typography className="mx-auto" variant="h4" color="blue-gray">
+            Create New Request
+          </Typography>
+        </div>
         <Typography color="gray" className="mt-1 font-normal">
           Enter your event details
         </Typography>
