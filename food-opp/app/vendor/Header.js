@@ -1,12 +1,11 @@
 import {} from 'react';
-import Link from 'next/link';
 import Image from 'next/image'
-import Caret from 'next/image'; //Having issues with the imag imports
+
 
 export default function Header() {
   return (
     <header className="text-gray-600 flex justify-between w-full bg-gray-800 p-0!">
-      <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row ">
+      <div className="container mx-auto flex flex-wrap p-5 flex-row ">
         <a className="flex title-font font-medium items-center text-gray-100 mb-4 md:mb-0"></a>
         <div name="logo" className="flex self-center">
           <Image
