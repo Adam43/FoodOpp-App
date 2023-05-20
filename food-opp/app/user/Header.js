@@ -4,12 +4,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Header() {
-  // const result = await
-
   const userName = 'Bob';
 
   return (
-    <header className="bg-white w-full pt-12">
+    <header className="w-full pt-12 px-12">
       <div className="container mx-auto flex flex-row items-center">
         <div className="flex flex-col">
           <div className="px-3 m-2 text-3xl self-start">Hi {userName}</div>
