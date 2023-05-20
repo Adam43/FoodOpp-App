@@ -30,7 +30,7 @@ export default function Cardcomponent({
             </h1>
             <button
               className="bg-red-600 text-white text-2xl px-7 hover:bg-[#f26a6a] border border-black rounded"
-              // onClick={}
+              // onClick={deleteEvent()}
             >
               x
             </button>

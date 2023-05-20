@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "eslint --ext .js,.ts,.jsx,.tsx --fix .",
+    "lint:fix": "eslint --ext .js,.ts,.jsx,.tsx --fix . && npm run format:fix",
     "format": "prettier --check .",
     "format:fix": "prettier --write ."
   },
@@ -15,15 +15,20 @@
     "@heroicons/react": "^2.0.18",
     "@material-tailwind/react": "^2.0.1",
     "autoprefixer": "10.4.14",
+    "bootstrap": "^5.3.0-alpha3",
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.3",
+    "firebase": "^9.22.0",
+    "moment": "^2.29.4",
     "next": "13.4.3",
     "postcss": "8.4.23",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hot-toast": "^2.4.1",
     "tailwindcss": "3.3.2"
   },
   "devDependencies": {
+    "@types/react": "^18.2.6",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-no-relative-import-paths": "^1.5.2",
     "prettier": "^2.8.8"

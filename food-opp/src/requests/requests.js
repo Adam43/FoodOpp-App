@@ -1,6 +1,6 @@
 const { ZERO_FIFTY } = require('../consts/requests');
 
-export const getUserActiveRequests = ({ userId }) => {
+export const getAllEvents = ({ userId }) => {
   // TODO
   const dummyData = [
     {
@@ -14,7 +14,7 @@ export const getUserActiveRequests = ({ userId }) => {
       notes: 'Hi we are celebrating a Friday',
     },
     {
-      id: 1,
+      id: 2,
       name: 'Central Park',
       status: 'searching',
       createdAt: 1684521929356,
@@ -23,16 +23,8 @@ export const getUserActiveRequests = ({ userId }) => {
       type: 'Ice Cream',
       notes: 'Hi we are celebrating a Friday',
     },
-  ];
-
-  return dummyData;
-};
-
-export const getUserExpiredRequests = ({ userId }) => {
-  // TODO
-  const dummyData = [
     {
-      id: 1,
+      id: 3,
       name: 'Central Park',
       status: 'searching',
       createdAt: 1684529209738,
@@ -42,7 +34,7 @@ export const getUserExpiredRequests = ({ userId }) => {
       notes: 'Hi we are celebrating a Friday',
     },
     {
-      id: 1,
+      id: 4,
       name: 'Central Park',
       status: 'searching',
       createdAt: 1684529209738,
