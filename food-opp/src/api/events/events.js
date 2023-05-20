@@ -17,6 +17,7 @@ export const getAllEvents = async () => {
         groupSize: value['num-people'],
         type: value['food-type'],
         notes: value.description,
+        location: value.location,
         upvotes: value.upvotes,
       };
       eventsArray.push(event);
