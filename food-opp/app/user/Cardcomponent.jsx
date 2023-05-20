@@ -1,3 +1,5 @@
+'use client';
+
 import {} from 'react';
 import {
   ChatBubbleBottomCenterTextIcon,
@@ -9,8 +11,11 @@ import {
 import { MAX_NOTE_LENGTH, MAX_TITLE_LENGTH } from '@/src/consts/cardComponent';
 import { Button } from '@material-tailwind/react';
 import moment from 'moment';
+import toast from 'react-hot-toast';
+import { deleteEvent } from '@/src/api/events/events'
 
 export default function Cardcomponent({
+  requestId,
   name,
   status,
   createdAt,
@@ -32,6 +37,24 @@ export default function Cardcomponent({
   const timeFromNow = moment(expiresAt).fromNow();
   const expired = moment().milliseconds() > expiresAt;
   const expiryText = expired ? 'Expired' : 'Expires';
+
+  const handleDelete = () => {
+    const deleteRequest = async () => {
+      try {
+        console.log(requestId)
+        await deleteEvent(requestId);
+        toast.success(`Deleted ${name ?? ''} event`);
+      } catch (error) {
+        toast.error(
+          `Could not delete ${name ?? ''} due to error: ${JSON.stringify(
+            error
+          )}`
+        );
+      }
+    };
+
+    deleteRequest();
+  };
 
   return (
     <div className="flex justify-center mt-30 px-5 mb-4">
@@ -60,7 +83,11 @@ export default function Cardcomponent({
             <h1 className=" border text-xs flex sqaure-full mr-2">
               {expiryText} {timeFromNow}
             </h1>
-            <Button color="red" className="flex items-center gap-2">
+            <Button
+              color="red"
+              className="flex items-center gap-2"
+              onClick={handleDelete}
+            >
               <XCircleIcon className="w-5 h-5" />
               Cancel
             </Button>
