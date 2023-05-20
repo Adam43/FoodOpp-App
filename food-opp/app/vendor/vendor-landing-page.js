@@ -87,18 +87,27 @@ export const VendorAcknowlege = (props) => {
             </h2>
           </div>
           <div class="relative">
+          <div class="flex flex-row ">
+              <label  class="text-gray-600 mr-1">
+                Customer name:
+              </label>
+              <label  class="text-gray-600 mb-2 sm:ml-5">
+                Joanna
+              </label>
+            </div>
             <div class="flex flex-row ">
-              <label for="email" class="text-gray-600 mr-1">
+              <label  class="text-gray-600 mr-1">
                 Food Type:
               </label>
-              <label for="email" class="text-gray-600 sm:ml-5">
+              <label  class="text-gray-600 sm:ml-5">
                 Ice Cream
               </label>
             </div>
+            
           </div>
           <div class="flex flex-col md:flex-row relative mb-2 md:justify-between ">
-            <label for="message" class="text-gray-600">
-              Count: 34
+            <label  class="text-gray-600">
+              Count: 20
             </label>
             <label
               for="message"
@@ -135,7 +144,7 @@ export const VendorTravel = (props) => {
           marginwidth="0"
           title="map"
           scrolling="no"
-          src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d24178.276176274518!2d-73.96071957570521!3d40.7557664696841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building%2C%20West%2034th%20Street%2C%20New%20York%2C%20NY!3m2!1d40.7484405!2d-73.98566439999999!4m5!1s0x89c25f5a5ba73285%3A0x6b41f887be24bcc9!2sAstoria%20Park%2C%2019%2019th%20St%2C%20Astoria%2C%20NY%2011105!3m2!1d40.7785364!2d-73.92283359999999!5e0!3m2!1sen!2sus!4v1684599747665!5m2!1sen!2sus"
+          src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d24178.276176274518!2d-73.96071957570521!3d40.7557664696841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building%2C%20West%2034th%20Street%2C%20New%20York%2C%20NY!3m2!1d40.7484405!2d-73.98566439999999!4m5!1s0x89c25f5a5ba73285%3A0x6b41f887be24bcc9!2sAstoria%20Park%2C%2019%2019th%20St%2C%20Astoria%2C%20NY%2011105!3m2!1d40.7785364!2d-73.92283359999999!5e0!3m2!1sen!2sus!4v1684599747665!5m2!1sen!2susz=16"
           style={{ filter: 'grayscale(0.2) contrast(1.2) opacity(0.8);' }}
         ></iframe>
       </div>
@@ -154,7 +163,7 @@ export const VendorTravel = (props) => {
                 Event Name:
               </label>
               <label  class="text-gray-600 mb-2 sm:ml-5">
-                Marathon
+                Birthday
               </label>
             </div>
           <div class="relative">
@@ -172,7 +181,7 @@ export const VendorTravel = (props) => {
                 People:
               </label>
               <label  class="text-gray-600 mb-2 sm:ml-5">
-                50
+                20
               </label>
             
             </div>
@@ -182,7 +191,7 @@ export const VendorTravel = (props) => {
                 Notes:
               </label>
               <label  class="text-gray-600 mb-5 sm:ml-5">
-                Marathon runners will want some ice cream to cool themselves off after a long run.
+                Birthday party for kids at the park
               </label>
             </div>
 
@@ -190,17 +199,7 @@ export const VendorTravel = (props) => {
                 Push notification has been sent to the customers
             </label>
           </div>
-          {/* <div class="flex flex-col md:flex-row relative mb-2 md:justify-between ">
-            <label for="message" class="text-gray-600">
-              Count: 34
-            </label>
-            <label
-              for="message"
-              class=" sm:text-left md:text-right lg:text-right text-gray-600"
-            >
-              Expiry Time: 2 Hrs
-            </label>
-          </div> */}
+      
         </div>
       </div>
     </section>
