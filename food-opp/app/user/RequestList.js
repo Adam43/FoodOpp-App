@@ -69,7 +69,7 @@ const RequestList = ({}) => {
 
   return (
     <div>
-      <Tabs value="dashboard">
+      <Tabs value="active">
         <TabsHeader>
           {tabs.map(({ label, value, icon }) => (
             <Tab key={value} value={value}>
