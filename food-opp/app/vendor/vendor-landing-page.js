@@ -47,7 +47,7 @@ export const VendorStart = (props) => {
                     marginwidth="0"
                     title="map"
                     scrolling="no"
-                    src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=astoria+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"
+                    src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=+(Astoria%20Park%20food)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                     style={{filter: "grayscale(0.2) contrast(1.2) opacity(0.8);"}}>
                     
                     </iframe>
@@ -76,18 +76,18 @@ export const VendorAcknowlege = (props) => {
           marginwidth="0"
           title="map"
           scrolling="no"
-          src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=astoria+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"
+          src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=parks%20astoria+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=16&amp;iwloc=B&amp;output=embed"
           style={{ filter: 'grayscale(0.2) contrast(1.2) opacity(0.8);' }}
         ></iframe>
       </div>
-      <div class="container px-5 pt-56 pb-5 mx-auto flex">
+      <div class="container px-5 pt-72 pb-5 mx-auto flex">
         <div class="flex-row bg-white rounded-lg p-8 flex flex-col w-full mt-10 md:mt-0 relative z-10 shadow-md">
           <div class="flex-col flex sm:flex-row mb-2">
             <h2 class="text-gray-900 text-lg mb-1 pr-2 font-medium title-font">
               Location:
             </h2>
             <h2 class="text-gray-900 text-lg mb-1 font-medium title-font">
-              1298 Park Ave, New York, NY 10201
+              Astoria Park
             </h2>
           </div>
           <div class="relative">
@@ -148,20 +148,20 @@ export const VendorTravel = (props) => {
               Location:
             </h2>
             <h2 class="text-gray-900 text-lg mb-1 font-medium title-font">
-              1298 Park Ave, New York, NY 10201
+              Astoria Park
             </h2>
           </div>
           <div class="relative">
             <div class="flex flex-row ">
               <label for="email" class="text-gray-600 mr-1">
-                Food Type:
+                Estimated Arival Time:
               </label>
               <label for="email" class="text-gray-600 sm:ml-5">
-                Ice Cream
+                30 minutes
               </label>
             </div>
           </div>
-          <div class="flex flex-col md:flex-row relative mb-2 md:justify-between ">
+          {/* <div class="flex flex-col md:flex-row relative mb-2 md:justify-between ">
             <label for="message" class="text-gray-600">
               Count: 34
             </label>
@@ -171,14 +171,9 @@ export const VendorTravel = (props) => {
             >
               Expiry Time: 2 Hrs
             </label>
-          </div>
-          <button class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-            Travel
-          </button>
-          <p class="text-xs text-gray-500 mt-2">
-            Clicking Acknowledge will start travel directions and send a time
-            estimate to customers
-          </p>
+          </div> */}
+          
+          
         </div>
       </div>
     </section>
