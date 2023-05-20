@@ -8,7 +8,7 @@ import { addEventEndpoint } from '@/src/consts/firebase';
 import toast, { Toaster } from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
 import { ArrowLeftIcon } from '@heroicons/react/24/solid';
-import { Switch } from "@material-tailwind/react";
+import { Switch } from '@material-tailwind/react';
 
 const NewRequest = ({}) => {
   const [name, setName] = useState('');
@@ -86,7 +86,7 @@ const NewRequest = ({}) => {
               className="border-2 border-black rounded-lg h-10 pl-2"
               type="text"
               name="name"
-              placeholder='Birthday Event'
+              placeholder="Birthday Event"
               value={name}
               onChange={(event) => setName(event.target.value)}
             />
@@ -98,11 +98,13 @@ const NewRequest = ({}) => {
               className="border-2 border-black rounded-lg h-10 pl-2"
               type="text"
               name="location"
-              placeholder='https://goo.gl/maps/VwwHHarXrMB...'
+              placeholder="https://goo.gl/maps/VwwHHarXrMB..."
               value={location}
               onChange={(event) => setLocation(event.target.value)}
             />
-            <label htmlFor="crowd-estimate" className='font-bold max-w-[8rem]'>Crowd Estimate</label>
+            <label htmlFor="crowd-estimate" className="font-bold max-w-[8rem]">
+              Crowd Estimate
+            </label>
             <input
               id="crowd-estimate"
               className="border-2 border-black max-w-[8rem] rounded-lg h-10 pl-2"
@@ -131,7 +133,7 @@ const NewRequest = ({}) => {
               name="event-duration"
               value={eventDuration}
               onChange={(event) => setEventDuration(event.target.value)}
-              className='border border-blue-500 h-10 pl-2 rounded-lg'
+              className="border border-blue-500 h-10 pl-2 rounded-lg"
             >
               <option value="15">15 minutes</option>
               <option value="30">30 minutes</option>
@@ -140,23 +142,12 @@ const NewRequest = ({}) => {
               <option value="90">90 minutes</option>
               <option value="120">120 minutes</option>
             </select>
-            <label
-              htmlFor="priority"
-              class="relative inline-flex items-center mb-4 cursor-pointer"
-            >
-              <input type="checkbox" value="" class="sr-only peer" />
-              <div className="w-11 h-6 bg-red-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-orange-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-orange-600 peer-checked:bg-blue-600"></div>
-              <span className="ml-3 text-lg font-bold text-gray-900 dark:text-blue-500">
-                Priority 🏃💨
-              </span>
-            </label>
+            <div className='flex gap-2 font-bold text-lg'>
+              <Switch defaultChecked /> Priority 🏃💨
+            </div>
             <label htmlFor="notes" className="self-center font-bold">
               Notes
             </label>
-
-            <Switch />
-
-            <label htmlFor="notes" className='self-center font-bold'>Notes</label>
             <textarea
               id="notes"
               className="border-2 border-black rounded-lg pl-2"
