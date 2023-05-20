@@ -69,13 +69,11 @@ export default function Cardcomponent({
 
         <div className="flex mt-10 gap-4 justify-between">
           <div className="flex w-1/5">
-          <UserGroupIcon className="h-6 w-6" />
+            <UserGroupIcon className="h-6 w-6" />
             <div>
               <h1 className="font-bold">People</h1>
               <p>{groupSize}</p>
             </div>
-
-            
           </div>
 
           <div className="flex w-1/5">
