@@ -1,6 +1,5 @@
 'use client';
 
-import { getAllEvents } from '@/src/requests/requests';
 import { CheckCircleIcon, ClockIcon } from '@heroicons/react/24/solid';
 import {
   Tabs,
@@ -9,12 +8,24 @@ import {
   Tab,
   TabPanel,
 } from '@material-tailwind/react';
-import React from 'react';
+import { getAllEvents } from '@/src/api/events/events';
+import React, { useEffect, useState } from 'react';
 import Cardcomponent from './Cardcomponent';
 
 const RequestList = ({}) => {
-  const allEvents = getAllEvents({ userId: 123 });
-  const activeCards = allEvents
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      const response = await getAllEvents();
+
+      setEvents(response);
+    };
+
+    fetchEvents();
+  }, []);
+
+  const activeCards = events
     .filter((request) => {
       return new Date(request.expiresAt) >= Date.now();
     })
@@ -33,7 +44,7 @@ const RequestList = ({}) => {
       );
     });
 
-  const expiredCards = allEvents
+  const expiredCards = events
     .filter((request) => {
       return new Date(request.expiresAt) < Date.now();
     })
