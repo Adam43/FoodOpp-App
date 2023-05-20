@@ -2,15 +2,16 @@
 import Image from 'next/image';
 import { useState } from 'react';
 
-
 export const VendorLandingPage = () => {
-  const [page, setPage] = useState("start")
+  const [page, setPage] = useState('start');
 
-  const clickStart = () => { setPage("ack"); }
+  const clickStart = () => {
+    setPage('ack');
+  };
 
   const clickAck = () => {
-    setPage("travel");
-  }
+    setPage('travel');
+  };
   return (
     <div
       className='h-screen'
@@ -29,8 +30,6 @@ export const VendorLandingPage = () => {
     </div>
   );
 };
-
-
 
 export const VendorStart = (props) => {
   return (
@@ -108,7 +107,10 @@ export const VendorAcknowlege = (props) => {
               Expiry Time: 2 Hrs
             </label>
           </div>
-          <button onClick={props.setPage} class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+          <button
+            onClick={props.setPage}
+            class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+          >
             Acknowledge
           </button>
           <p class="text-xs text-gray-500 mt-2">
@@ -120,7 +122,6 @@ export const VendorAcknowlege = (props) => {
     </section>
   );
 };
-
 
 export const VendorTravel = (props) => {
   return (
@@ -200,8 +201,6 @@ export const VendorTravel = (props) => {
               Expiry Time: 2 Hrs
             </label>
           </div> */}
-          
-          
         </div>
       </div>
     </section>

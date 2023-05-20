@@ -3,7 +3,7 @@ import { Toaster } from 'react-hot-toast';
 
 const UserLayout = ({ children }) => {
   return (
-    <section>
+    <section className='bg-[#FBF4F4]'>
       <Toaster />
       <Header />
       {children}
@@ -12,3 +12,5 @@ const UserLayout = ({ children }) => {
 };
 
 export default UserLayout;
+
+

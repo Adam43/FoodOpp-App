@@ -1,6 +1,5 @@
 import {} from 'react';
-import Image from 'next/image'
-
+import Image from 'next/image';
 
 export default function Header() {
   return (
@@ -18,7 +17,9 @@ export default function Header() {
 
         {/*Menu*/}
         <nav className="flex flex-wrap items-center text-base justify-between text-gray-100 font-bold">
-          <h1 className="px-3 m-2 text-white items-center font-bold">Hello, Paletero Inc.</h1>
+          <h1 className="px-3 m-2 text-white items-center font-bold">
+            Hello, Paletero Inc.
+          </h1>
         </nav>
         <div></div>
       </div>

@@ -11,21 +11,16 @@ import {
 import { getAllEvents } from '@/src/api/events/events';
 import React, { useEffect, useState } from 'react';
 import Cardcomponent from './Cardcomponent';
+import EmptyList from 'components/EmptyResults/EmptyResults';
 
 const RequestList = ({}) => {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    const fetchEvents = async () => {
-      const response = await getAllEvents();
+    getAllEvents(setEvents);
+  }, [setEvents]);
 
-      setEvents(response);
-    };
-
-    fetchEvents();
-  }, []);
-
-  const activeCards = events
+  let activeCards = events
     .filter((request) => {
       return new Date(request.expiresAt) >= Date.now();
     })
@@ -33,6 +28,7 @@ const RequestList = ({}) => {
       return (
         <Cardcomponent
           key={request.id}
+          requestId={request.id}
           name={request.name}
           status={request.status}
           createdAt={request.createdAt}
@@ -40,9 +36,15 @@ const RequestList = ({}) => {
           groupSize={request.groupSize}
           type={request.type}
           notes={request.notes}
+          location={request.location}
         />
       );
     });
+
+  // Show a note if list is empty
+  if (activeCards.length === 0) {
+    activeCards = <EmptyList />;
+  }
 
   const expiredCards = events
     .filter((request) => {
@@ -52,6 +54,7 @@ const RequestList = ({}) => {
       return (
         <Cardcomponent
           key={request.id}
+          requestId={request.id}
           name={request.name}
           status={request.status}
           createdAt={request.createdAt}
@@ -59,6 +62,7 @@ const RequestList = ({}) => {
           groupSize={request.groupSize}
           type={request.type}
           notes={request.notes}
+          location={request.location}
         />
       );
     });
