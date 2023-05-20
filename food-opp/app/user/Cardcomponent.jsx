@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import {} from 'react';
 import {
@@ -41,6 +41,7 @@ export default function Cardcomponent({
     const deleteRequest = async () => {
       try {
         await deleteEvent(requestId);
+        toast.success(`Deleted ${name ?? ''} event`);
       } catch (error) {
         toast.error(
           `Could not delete ${name ?? ''} due to error: ${JSON.stringify(
