@@ -12,7 +12,9 @@ export const VendorLandingPage = () => {
     setPage("travel");
   }
   return (
-    <div>
+    <div
+      className='h-screen'
+    >
       { page==="start" ?
           <VendorStart setPage={clickStart}/>
         :
@@ -32,8 +34,8 @@ export const VendorLandingPage = () => {
 
 export const VendorStart = (props) => {
   return (
-<section class="text-gray-600 body-font relative">
-            <div class="absolute inset-0 bg-gray-300">
+<section class="text-gray-600 body-font relative h-screen">
+            <div class="absolute inset-0 bg-gray-300 h-screen">
                 <iframe
                     width="100%"
                     height="100%"
@@ -48,11 +50,11 @@ export const VendorStart = (props) => {
                     </iframe>
             </div>
             <div class="container px-5 pt-56 pb-5 mx-auto flex">
-                <div class="flex-row bg-white rounded-lg p-8 flex flex-col w-full mt-10 md:mt-0 relative z-10 shadow-md">
+                <div class="flex-row bg-white rounded-lg p-8 flex flex-col w-full mt-[43rem] md:mt-[43rem] relative z-10 shadow-md border-2 border-indigo-500">
                    
                 
                 <button onClick={props.setPage} class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Start</button>
-                <p class="text-xs text-gray-500 mt-2">Clicking Acknowledge will start travel directions and send a time estimate to customers</p>
+                <p class="text-xs text-gray-500 mt-2">Clicking start will start will show event information</p>
                 </div>
             </div>
         </section>
@@ -61,8 +63,8 @@ export const VendorStart = (props) => {
 
 export const VendorAcknowlege = (props) => {
   return (
-    <section class="text-gray-600 body-font relative">
-      <div class="absolute inset-0 bg-gray-300">
+    <section class="text-gray-600 body-font relative h-screen">
+      <div class="absolute inset-0 bg-gray-300 h-screen">
         <iframe
           width="100%"
           height="100%"
@@ -76,7 +78,7 @@ export const VendorAcknowlege = (props) => {
         ></iframe>
       </div>
       <div class="container px-5 pt-72 pb-5 mx-auto flex">
-        <div class="flex-row bg-white rounded-lg p-8 flex flex-col w-full mt-10 md:mt-0 relative z-10 shadow-md">
+        <div class="flex-row bg-white rounded-lg p-8 flex flex-col w-full mt-[31rem] md:mt-[31rem] relative z-10 shadow-md border-2 border-indigo-500">
           <div class="flex-col flex sm:flex-row mb-2">
             <h2 class="text-gray-900 text-lg mb-1 pr-2 font-medium title-font">
               Location:
@@ -122,8 +124,8 @@ export const VendorAcknowlege = (props) => {
 
 export const VendorTravel = (props) => {
   return (
-    <section class="text-gray-600 body-font relative">
-      <div class="absolute inset-0 bg-gray-300">
+    <section class="text-gray-600 body-font relative h-screen">
+      <div class="absolute inset-0 bg-gray-300 h-screen">
         <iframe
           width="100%"
           height="100%"
@@ -137,24 +139,55 @@ export const VendorTravel = (props) => {
         ></iframe>
       </div>
       <div class="container px-5 pt-56 pb-5 mx-auto flex">
-        <div class="flex-row bg-white rounded-lg p-8 flex flex-col w-full mt-10 md:mt-0 relative z-10 shadow-md">
+        <div class="flex-row bg-white rounded-lg p-8 flex flex-col w-full mt-[35rem] md:mt-[35rem] relative z-10 shadow-md border-2 border-indigo-500">
           <div class="flex-col flex sm:flex-row mb-2">
             <h2 class="text-gray-900 text-lg mb-1 pr-2 font-medium title-font">
               Location:
             </h2>
-            <h2 class="text-gray-900 text-lg mb-1 font-medium title-font">
+            <h2 class="text-gray-900 text-lg font-medium title-font">
               Astoria Park
             </h2>
           </div>
+          <div class="flex flex-row ">
+              <label  class="text-gray-600 mr-1">
+                Event Name:
+              </label>
+              <label  class="text-gray-600 mb-2 sm:ml-5">
+                Marathon
+              </label>
+            </div>
           <div class="relative">
             <div class="flex flex-row ">
-              <label for="email" class="text-gray-600 mr-1">
+              <label  class="text-gray-600 mr-1">
                 Estimated Arival Time:
               </label>
-              <label for="email" class="text-gray-600 sm:ml-5">
+              <label  class="text-gray-600 mb-2 sm:ml-5">
                 30 minutes
               </label>
             </div>
+
+            <div class="flex flex-row ">
+              <label  class="text-gray-600 mr-1">
+                People:
+              </label>
+              <label  class="text-gray-600 mb-2 sm:ml-5">
+                50
+              </label>
+            
+            </div>
+
+            <div class="flex flex-row ">
+              <label  class="text-gray-600 mr-1">
+                Notes:
+              </label>
+              <label  class="text-gray-600 mb-5 sm:ml-5">
+                Marathon runners will want some ice cream to cool themselves off after a long run.
+              </label>
+            </div>
+
+            <label  class="text-gray-600">
+                Push notification has been sent to the customers
+            </label>
           </div>
           {/* <div class="flex flex-col md:flex-row relative mb-2 md:justify-between ">
             <label for="message" class="text-gray-600">
