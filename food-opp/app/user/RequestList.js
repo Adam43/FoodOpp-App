@@ -40,6 +40,7 @@ const RequestList = ({}) => {
           groupSize={request.groupSize}
           type={request.type}
           notes={request.notes}
+          location={request.location}
         />
       );
     });
@@ -59,6 +60,7 @@ const RequestList = ({}) => {
           groupSize={request.groupSize}
           type={request.type}
           notes={request.notes}
+          location={request.location}
         />
       );
     });

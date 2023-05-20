@@ -2,7 +2,6 @@
 import Image from 'next/image';
 import { useState } from 'react';
 
-
 export const VendorLandingPage = () => {
   const [page, setPage] = useState("start")
 
@@ -13,22 +12,19 @@ export const VendorLandingPage = () => {
   }
   return (
     <div>
-      { page==="start" ?
-          <VendorStart setPage={clickStart}/>
-        :
-        page==="ack" ?
-          <VendorAcknowlege setPage={clickAck}/>
-        :
-        page==="travel" ?
-          <VendorTravel/>
-        :
-          <VendorStart setPage={clickStart}/>
-      }
+      {page === 'start' ? (
+        <VendorStart setPage={clickStart} />
+      ) : page === 'ack' ? (
+        <VendorAcknowlege setPage={clickAck} />
+      ) : page === 'travel' ? (
+        // <VendorTravel />
+        <></>
+      ) : (
+        <VendorStart setPage={clickStart} />
+      )}
     </div>
   );
 };
-
-
 
 export const VendorStart = (props) => {
   return (
@@ -44,13 +40,13 @@ export const VendorStart = (props) => {
                     scrolling="no"
                     src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=+(Astoria%20Park%20public)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                     style={{filter: "grayscale(0.2) contrast(1.2) opacity(0.8);"}}>
-                    
+
                     </iframe>
             </div>
             <div class="container px-5 pt-56 pb-5 mx-auto flex">
                 <div class="flex-row bg-white rounded-lg p-8 flex flex-col w-full mt-10 md:mt-0 relative z-10 shadow-md">
-                   
-                
+
+
                 <button onClick={props.setPage} class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Start</button>
                 <p class="text-xs text-gray-500 mt-2">Clicking Acknowledge will start travel directions and send a time estimate to customers</p>
                 </div>
@@ -106,7 +102,10 @@ export const VendorAcknowlege = (props) => {
               Expiry Time: 2 Hrs
             </label>
           </div>
-          <button onClick={props.setPage} class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+          <button
+            onClick={props.setPage}
+            class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+          >
             Acknowledge
           </button>
           <p class="text-xs text-gray-500 mt-2">
@@ -118,7 +117,6 @@ export const VendorAcknowlege = (props) => {
     </section>
   );
 };
-
 
 export const VendorTravel = (props) => {
   return (
@@ -167,8 +165,8 @@ export const VendorTravel = (props) => {
               Expiry Time: 2 Hrs
             </label>
           </div> */}
-          
-          
+
+
         </div>
       </div>
     </section>
