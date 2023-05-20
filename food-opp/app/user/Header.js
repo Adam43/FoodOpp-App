@@ -15,29 +15,8 @@ export default function Header() {
         <div name="logo" className="flex self-center">
           {/* <img src={Logo} alt="FoodOpp Logo" /> */}
         </div>
-        <div
-          name="profile-pic"
-          className="h-20 w-20 border border-black rounded-full"
-        ></div>
         {/* <img src={"../images/caret.png"} /> */}
-        <h1 className="px-3 m-2 text-white font-bold">Hello, {userName}!</h1>
-        {/*Menu*/}
-        <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center text-gray-100 font-bold">
-          <ul className="hidden md:flex nav-pink">
-            <a className="mr-5 hover:text-blue-500">
-              <li>First Link</li>
-            </a>
-            <a className="mr-5 hover:text-blue-500">
-              <li>Second Link</li>
-            </a>
-            <a className="mr-5 hover:text-blue-500">
-              <li>Third Link</li>
-            </a>
-            <a className="mr-5 hover:text-blue-500">
-              <li>Fourth Link</li>
-            </a>
-          </ul>
-        </nav>
+        <h1 className="px-3 m-2 text-white font-bold text-4xl">Hello, {userName}!</h1>
         <div></div>
       </div>
     </header>
@@ -45,3 +24,8 @@ export default function Header() {
 }
 
 //create new request
+
+
+        //   name="profile-pic"
+        //   className="h-20 w-20 border border-black rounded-full"
+        // ></div>
