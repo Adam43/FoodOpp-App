@@ -11,6 +11,7 @@ import {
 import { getAllEvents } from '@/src/api/events/events';
 import React, { useEffect, useState } from 'react';
 import Cardcomponent from './Cardcomponent';
+import EmptyList from 'components/EmptyResults/EmptyResults';
 
 const RequestList = ({}) => {
   const [events, setEvents] = useState([]);
@@ -25,7 +26,7 @@ const RequestList = ({}) => {
     fetchEvents();
   }, []);
 
-  const activeCards = events
+  let activeCards = events
     .filter((request) => {
       return new Date(request.expiresAt) >= Date.now();
     })
@@ -44,6 +45,11 @@ const RequestList = ({}) => {
         />
       );
     });
+
+  // Show a note if list is empty
+  if (activeCards.length === 0) {
+    activeCards = <EmptyList />;
+  }
 
   const expiredCards = events
     .filter((request) => {
