@@ -7,12 +7,13 @@ import {
   XCircleIcon,
   UserGroupIcon,
   Bars2Icon,
+  ClockIcon,
 } from '@heroicons/react/24/solid';
 import { MAX_NOTE_LENGTH, MAX_TITLE_LENGTH } from '@/src/consts/cardComponent';
 import { Button } from '@material-tailwind/react';
 import moment from 'moment';
 import toast from 'react-hot-toast';
-import { deleteEvent } from '@/src/api/events/events'
+import { deleteEvent } from '@/src/api/events/events';
 
 export default function Cardcomponent({
   requestId,
@@ -35,13 +36,12 @@ export default function Cardcomponent({
       : notes;
 
   const timeFromNow = moment(expiresAt).fromNow();
-  const expired = moment().milliseconds() > expiresAt;
+  const expired = moment().valueOf() >= expiresAt;
   const expiryText = expired ? 'Expired' : 'Expires';
 
   const handleDelete = () => {
     const deleteRequest = async () => {
       try {
-        console.log(requestId)
         await deleteEvent(requestId);
         toast.success(`Deleted ${name ?? ''} event`);
       } catch (error) {
@@ -61,7 +61,7 @@ export default function Cardcomponent({
       <div className="bg-[#e0e2e3] w-full md:w-[600px] max-h-96 h-fit border-2 border-black rounded-2xl p-4 md:flex-row justify-between">
         <div className="flex justify-between ">
           <div className="flex-col flex">
-            <h1 className="font-bold text-2xl">{truncatedTitle}new york</h1>
+            <h1 className="font-bold text-2xl">{truncatedTitle}</h1>
 
             <a
               href={location}
@@ -72,16 +72,11 @@ export default function Cardcomponent({
           </div>
 
           <div className="flex items-center justify-end ">
-            <svg viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
-              <path
-                fillRule="evenodd"
-                d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z"
-                clipRule="evenodd"
-              />
-            </svg>
-
-            <h1 className=" border text-xs flex sqaure-full mr-2">
-              {expiryText} {timeFromNow}
+            <h1 className="flex flex-col min-w-fit gap-1 text-xs square-full mr-2">
+              <div className="flex items-center">
+                <ClockIcon className="w-5 h-5" /> {expiryText}
+              </div>
+              <div>{timeFromNow}</div>
             </h1>
             <Button
               color="red"
