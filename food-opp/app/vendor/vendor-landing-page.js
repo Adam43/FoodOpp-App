@@ -44,20 +44,20 @@ export const MapComponent = () => {
           </div>
           <div class="relative">
             <div class="flex flex-row ">
-              <label for="email" class="text-gray-600 mr-1">
+              <label htmlFor="email" class="text-gray-600 mr-1">
                 Food Type:
               </label>
-              <label for="email" class="text-gray-600 sm:ml-5">
+              <label htmlFor="email" class="text-gray-600 sm:ml-5">
                 Ice Cream
               </label>
             </div>
           </div>
           <div class="flex flex-col md:flex-row relative mb-2 md:justify-between ">
-            <label for="message" class="text-gray-600">
+            <label htmlFor="message" class="text-gray-600">
               Count: 34
             </label>
             <label
-              for="message"
+              htmlFor="message"
               class=" sm:text-left md:text-right lg:text-right text-gray-600"
             >
               Expiry Time: 2 Hrs
