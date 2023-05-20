@@ -8,6 +8,7 @@ import { addEventEndpoint } from '@/src/consts/firebase';
 import toast, { Toaster } from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
 import { ArrowLeftIcon } from '@heroicons/react/24/solid';
+import { Switch } from "@material-tailwind/react";
 
 const NewRequest = ({}) => {
   const [name, setName] = useState('');
@@ -85,7 +86,7 @@ const NewRequest = ({}) => {
               className="border-2 border-black rounded-lg h-10 pl-2"
               type="text"
               name="name"
-              placeholder="xxx"
+              placeholder='Birthday Event'
               value={name}
               onChange={(event) => setName(event.target.value)}
             />
@@ -97,16 +98,14 @@ const NewRequest = ({}) => {
               className="border-2 border-black rounded-lg h-10 pl-2"
               type="text"
               name="location"
-              placeholder="Google URL:"
+              placeholder='https://goo.gl/maps/VwwHHarXrMB...'
               value={location}
               onChange={(event) => setLocation(event.target.value)}
             />
-            <label htmlFor="crowd-estimate" className="font-bold">
-              Crowd Estimate
-            </label>
+            <label htmlFor="crowd-estimate" className='font-bold max-w-[8rem]'>Crowd Estimate</label>
             <input
               id="crowd-estimate"
-              className="border-2 border-black rounded-lg h-10 w-20 text-center"
+              className="border-2 border-black max-w-[8rem] rounded-lg h-10 pl-2"
               type="number"
               name="crowd-estimate"
               value={crowdEstimate}
@@ -117,7 +116,7 @@ const NewRequest = ({}) => {
             </label>
             <input
               id="food-type"
-              className="border-2 border-black pl-2"
+              className="border-2 border-black rounded-lg h-10 pl-2"
               type="text"
               name="food-type"
               placeholder="Thai"
@@ -132,6 +131,7 @@ const NewRequest = ({}) => {
               name="event-duration"
               value={eventDuration}
               onChange={(event) => setEventDuration(event.target.value)}
+              className='border border-blue-500 h-10 pl-2 rounded-lg'
             >
               <option value="15">15 minutes</option>
               <option value="30">30 minutes</option>
@@ -153,9 +153,13 @@ const NewRequest = ({}) => {
             <label htmlFor="notes" className="self-center font-bold">
               Notes
             </label>
+              
+            <Switch />
+  
+            <label htmlFor="notes" className='self-center font-bold'>Notes</label>
             <textarea
               id="notes"
-              className="border-2 border-black pl-2"
+              className="border-2 border-black rounded-lg pl-2"
               name="notes"
               placeholder="Dairy free...etc"
               value={notes}
