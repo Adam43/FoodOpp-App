@@ -28,3 +28,20 @@ export const getAllEvents = async () => {
     console.log('error trying to fetch events ', error);
   }
 };
+
+export const deleteEvent = async (eventId) => {
+  try {
+    const res = await fetch(
+      `https://food-opp-default-rtdb.firebaseio.com/events/${eventId}.json`,
+      {
+        method: 'DELETE',
+      }
+    );
+
+    const json = await res.json();
+
+    console.log(`json `, json);
+  } catch (error) {
+    console.log('error trying to delete event ', error);
+  }
+};
