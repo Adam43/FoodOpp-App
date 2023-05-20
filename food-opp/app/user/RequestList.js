@@ -34,6 +34,7 @@ const RequestList = ({}) => {
       return (
         <Cardcomponent
           key={request.id}
+          requestId={request.id}
           name={request.name}
           status={request.status}
           createdAt={request.createdAt}
@@ -59,6 +60,7 @@ const RequestList = ({}) => {
       return (
         <Cardcomponent
           key={request.id}
+          requestId={request.id}
           name={request.name}
           status={request.status}
           createdAt={request.createdAt}
