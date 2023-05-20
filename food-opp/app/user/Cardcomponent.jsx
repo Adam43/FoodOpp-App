@@ -4,7 +4,7 @@ import {
   MapPinIcon,
   XCircleIcon,
 } from '@heroicons/react/24/solid';
-import { MAX_NOTE_LENGTH } from '@/src/consts/cardComponent';
+import { MAX_NOTE_LENGTH, MAX_TITLE_LENGTH } from '@/src/consts/cardComponent';
 import { Button } from '@material-tailwind/react';
 import moment from 'moment';
 
@@ -18,8 +18,12 @@ export default function Cardcomponent({
   notes,
   location,
 }) {
+  const truncatedTitle =
+    name && name.length > MAX_TITLE_LENGTH
+      ? `${name.slice(0, MAX_TITLE_LENGTH)}...`
+      : name;
   const truncatedNotes =
-    notes.length > MAX_NOTE_LENGTH
+    notes && notes.length > MAX_NOTE_LENGTH
       ? `${notes.slice(0, MAX_NOTE_LENGTH)}...`
       : notes;
 
@@ -32,7 +36,7 @@ export default function Cardcomponent({
       <div className="bg-[#e0e2e3] w-full md:w-[600px] max-h-96 h-fit border-2 border-black rounded-2xl p-4 md:flex-row justify-between">
         <div className="flex justify-between ">
           <div className="flex-col flex">
-            <h1 className="font-bold text-2xl">{name}new york</h1>
+            <h1 className="font-bold text-2xl">{truncatedTitle}new york</h1>
 
             <a
               href={location}
