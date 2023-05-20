@@ -42,7 +42,7 @@ export const VendorStart = (props) => {
                     marginwidth="0"
                     title="map"
                     scrolling="no"
-                    src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=+(Astoria%20Park%20food)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                    src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=+(Astoria%20Park%20public)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                     style={{filter: "grayscale(0.2) contrast(1.2) opacity(0.8);"}}>
                     
                     </iframe>
@@ -132,7 +132,7 @@ export const VendorTravel = (props) => {
           marginwidth="0"
           title="map"
           scrolling="no"
-          src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=astoria+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"
+          src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d24178.276176274518!2d-73.96071957570521!3d40.7557664696841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building%2C%20West%2034th%20Street%2C%20New%20York%2C%20NY!3m2!1d40.7484405!2d-73.98566439999999!4m5!1s0x89c25f5a5ba73285%3A0x6b41f887be24bcc9!2sAstoria%20Park%2C%2019%2019th%20St%2C%20Astoria%2C%20NY%2011105!3m2!1d40.7785364!2d-73.92283359999999!5e0!3m2!1sen!2sus!4v1684599747665!5m2!1sen!2sus"
           style={{ filter: 'grayscale(0.2) contrast(1.2) opacity(0.8);' }}
         ></iframe>
       </div>
