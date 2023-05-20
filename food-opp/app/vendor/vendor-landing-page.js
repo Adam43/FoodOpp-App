@@ -5,15 +5,10 @@ import { useState } from 'react';
 
 export const VendorLandingPage = () => {
   const [page, setPage] = useState("start")
-  console.log("-----------", page)
 
-  const clickStart = () => {
-    console.log("-----onclick clicked")
-    setPage("ack");
-  }
+  const clickStart = () => { setPage("ack"); }
 
   const clickAck = () => {
-    console.log("-----onclick clicked")
     setPage("travel");
   }
   return (
