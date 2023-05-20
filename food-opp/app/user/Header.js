@@ -10,17 +10,13 @@ export default function Header() {
   const userName = 'Bob';
 
   return (
-    <header className="text-gray-600 flex flex-wrap self-center w-full bg-gray-800 p-0!">
-      <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row ">
-        <a className="flex title-font font-medium items-center text-gray-100 mb-4 md:mb-0"></a>
-        <div name="logo" className="flex self-center">
-          <Image src="/logo.png" alt="FoodOpp Logo" width="100" height="100" />
-        </div>
-        {/* <img src={"../images/caret.png"} /> */}
-        <h1 className="px-3 m-2 text-white font-bold text-4xl self-center">
-          Hello, {userName}!
-        </h1>
-        <div></div>
+    <header className="bg-white w-full">
+      <div className="container mx-auto flex flex-row items-center">
+        <h1 className="px-3 m-2 text-4xl self-start">Hi {userName}</h1>
+        {/* Commenting out until we get a better logo */}
+        {/* <div name="logo" className="flex self-center">
+          <Image src="/logo.png" alt="FoodOpp Logo" width="64" height="64" />
+        </div> */}
       </div>
     </header>
   );
