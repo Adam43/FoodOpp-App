@@ -22,18 +22,18 @@ export default function Header() {
         {/* <img src={"../images/caret.png"} /> */}
         <h1 className="px-3 m-2 text-white font-bold">Hello, {userName}!</h1>
         {/*Menu*/}
-        <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center text-gray-100 font-bold">
+        <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center text-gray-100 font-bold">
           <ul className="hidden md:flex nav-pink">
-            <a class="mr-5 hover:text-blue-500">
+            <a className="mr-5 hover:text-blue-500">
               <li>First Link</li>
             </a>
-            <a class="mr-5 hover:text-blue-500">
+            <a className="mr-5 hover:text-blue-500">
               <li>Second Link</li>
             </a>
-            <a class="mr-5 hover:text-blue-500">
+            <a className="mr-5 hover:text-blue-500">
               <li>Third Link</li>
             </a>
-            <a class="mr-5 hover:text-blue-500">
+            <a className="mr-5 hover:text-blue-500">
               <li>Fourth Link</li>
             </a>
           </ul>
