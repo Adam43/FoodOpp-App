@@ -44,8 +44,11 @@ const NewRequest = ({}) => {
         },
       });
 
-      const json = await result.json();
-      console.log('event created successfully');
+      if (!result.ok) {
+        toast.error(`Could not create event`);
+        return;
+      }
+
       toast.success(`${name} event requested!`);
       router.push('/user');
     } catch (error) {
@@ -57,7 +60,6 @@ const NewRequest = ({}) => {
 
   return (
     <div className="flex flex-col p-4 w-full items-center">
-      <Toaster />
       <Card color="transparent" shadow={false}>
         <div className="flex">
           <Link href="/user" className="w-6 h-6 mr-auto">
