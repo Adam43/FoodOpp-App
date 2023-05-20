@@ -74,7 +74,7 @@ const NewRequest = ({}) => {
           Enter your event details:
         </Typography>
         <form
-          className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96 text-white"
+          className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96 dark:text-white"
           onSubmit={handleSend}
         >
           <div className="mb-4 flex flex-col gap-6">
@@ -153,9 +153,9 @@ const NewRequest = ({}) => {
             <label htmlFor="notes" className="self-center font-bold">
               Notes
             </label>
-              
+
             <Switch />
-  
+
             <label htmlFor="notes" className='self-center font-bold'>Notes</label>
             <textarea
               id="notes"
