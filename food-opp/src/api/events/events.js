@@ -1,5 +1,5 @@
 import { database } from '@/src/firebase/firebase';
-import { ref, child, get } from 'firebase/database';
+import { ref, child, get, remove } from 'firebase/database';
 
 export const getAllEvents = async () => {
   const dbRef = ref(database);
@@ -30,16 +30,7 @@ export const getAllEvents = async () => {
 
 export const deleteEvent = async (eventId) => {
   try {
-    const res = await fetch(
-      `https://food-opp-default-rtdb.firebaseio.com/events/${eventId}.json`,
-      {
-        method: 'DELETE',
-      }
-    );
-
-    const json = await res.json();
-
-    console.log(`json `, json);
+    await remove(ref(database, `events/${eventId}`));
   } catch (error) {
     console.log('error trying to delete event ', error);
   }
