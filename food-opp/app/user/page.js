@@ -8,7 +8,6 @@ export default function Page() {
     <div className="flex flex-col gap-4 p-4">
       <RequestFood />
       <RequestList />
-      < Cardcomponent />
     </div>
   );
 }

@@ -112,7 +112,10 @@ export const VendorAcknowlege = (props) => {
               Expiry Time: 2 Hrs
             </label>
           </div>
-          <button onClick={props.setPage} class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+          <button
+            onClick={props.setPage}
+            class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+          >
             Acknowledge
           </button>
           <p class="text-xs text-gray-500 mt-2">
@@ -124,7 +127,6 @@ export const VendorAcknowlege = (props) => {
     </section>
   );
 };
-
 
 export const VendorTravel = (props) => {
   return (

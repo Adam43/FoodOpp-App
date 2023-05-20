@@ -14,10 +14,12 @@ export default function Header() {
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row ">
         <a className="flex title-font font-medium items-center text-gray-100 mb-4 md:mb-0"></a>
         <div name="logo" className="flex self-center">
-           <Image src="/logo.png" alt="FoodOpp Logo" width="100" height="100" /> 
+          <Image src="/logo.png" alt="FoodOpp Logo" width="100" height="100" />
         </div>
         {/* <img src={"../images/caret.png"} /> */}
-        <h1 className="px-3 m-2 text-white font-bold text-4xl self-center">Hello, {userName}!</h1>
+        <h1 className="px-3 m-2 text-white font-bold text-4xl self-center">
+          Hello, {userName}!
+        </h1>
         <div></div>
       </div>
     </header>
@@ -26,7 +28,6 @@ export default function Header() {
 
 //create new request
 
-
-        //   name="profile-pic"
-        //   className="h-20 w-20 border border-black rounded-full"
-        // ></div>
+//   name="profile-pic"
+//   className="h-20 w-20 border border-black rounded-full"
+// ></div>
