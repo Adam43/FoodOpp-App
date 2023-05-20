@@ -12,6 +12,7 @@ import { MAX_NOTE_LENGTH, MAX_TITLE_LENGTH } from '@/src/consts/cardComponent';
 import { Button } from '@material-tailwind/react';
 import moment from 'moment';
 import toast from 'react-hot-toast';
+import { deleteEvent } from '@/src/api/events/events'
 
 export default function Cardcomponent({
   requestId,
@@ -40,6 +41,7 @@ export default function Cardcomponent({
   const handleDelete = () => {
     const deleteRequest = async () => {
       try {
+        console.log(requestId)
         await deleteEvent(requestId);
         toast.success(`Deleted ${name ?? ''} event`);
       } catch (error) {

@@ -17,14 +17,8 @@ const RequestList = ({}) => {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    const fetchEvents = async () => {
-      const response = await getAllEvents();
-
-      setEvents(response);
-    };
-
-    fetchEvents();
-  }, []);
+    getAllEvents(setEvents);
+  }, [setEvents]);
 
   let activeCards = events
     .filter((request) => {
