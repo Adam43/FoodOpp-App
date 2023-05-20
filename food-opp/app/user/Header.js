@@ -2,6 +2,7 @@ import {} from 'react';
 import Link from 'next/link';
 // import Logo from "../images/logo.png" //Having issues with the imag imports
 import Caret from 'next/image'; //Having issues with the imag imports
+import Image from 'next/image';
 
 export default function Header() {
   // const result = await
@@ -13,10 +14,10 @@ export default function Header() {
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row ">
         <a className="flex title-font font-medium items-center text-gray-100 mb-4 md:mb-0"></a>
         <div name="logo" className="flex self-center">
-          {/* <img src={Logo} alt="FoodOpp Logo" /> */}
+           <Image src="/logo.png" alt="FoodOpp Logo" width="100" height="100" /> 
         </div>
         {/* <img src={"../images/caret.png"} /> */}
-        <h1 className="px-3 m-2 text-white font-bold text-4xl">Hello, {userName}!</h1>
+        <h1 className="px-3 m-2 text-white font-bold text-4xl self-center">Hello, {userName}!</h1>
         <div></div>
       </div>
     </header>
