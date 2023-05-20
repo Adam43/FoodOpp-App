@@ -3,7 +3,12 @@ import { ref, child, get, remove } from 'firebase/database';
 
 export const getAllEvents = async () => {
   const dbRef = ref(database);
-  const snapshot = await get(child(dbRef, `events`));
+  let snapshot = null;
+  try {
+    snapshot = await get(child(dbRef, `events`));
+  } catch (error) {
+    console.log('error trying to get all events ', error);
+  }
 
   if (!snapshot.exists()) {
     console.warn('No data available');
