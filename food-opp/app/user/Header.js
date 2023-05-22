@@ -4,13 +4,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Header() {
-  const userName = 'Bob';
+  const userName = 'Joanna';
 
   return (
-    <header className="w-full pt-12 px-12">
+    <header className="w-full pt-12 px-12 bg-[#ffff0054]">
       <div className="container mx-auto flex flex-row items-center">
         <div className="flex flex-col">
-          <div className="px-3 m-2 text-3xl self-start">Hi {userName}</div>
+          <div className="px-3 m-2 text-3xl self-start font-bold">Hi {userName},</div>
           {/* <div className="px-3 m-2 text-2xl self-start">What&apos;s on your mind?</div> */}
           <div className="px-3 m-2 text-2xl self-start">
             What food truck do you need?

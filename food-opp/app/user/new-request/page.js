@@ -60,7 +60,7 @@ const NewRequest = ({}) => {
   };
 
   return (
-    <div className="flex flex-col p-4 w-full items-center">
+    <div className="flex flex-col p-4 w-full items-center bg-[#e7e74443]">
       <Card color="transparent" shadow={false}>
         <div className="flex items-center">
           <Link href="/user" className="w-6 h-6 mr-auto">
