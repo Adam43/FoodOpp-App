@@ -80,7 +80,7 @@ export default function Cardcomponent({
   };
 
   return (
-    <div className="flex justify-center mt-30 px-5 mb-4 ">
+    <div className="flex justify-center mt-30 px-5 mb-4 pb-20">
       <div className="w-full md:w-[600px] max-h-96 h-fit bg-white border-2 border-black rounded-2xl p-4 md:flex-row justify-between">
         <div className="flex justify-between ">
           <div className="flex-col flex">
