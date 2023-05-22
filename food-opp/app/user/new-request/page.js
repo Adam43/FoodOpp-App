@@ -24,6 +24,7 @@ const NewRequest = ({}) => {
     event.preventDefault();
 
     const requestBody = {
+      name: name,
       description: notes,
       'expiry-time-in-millis': moment()
         .add(parseInt(eventDuration), 'm')

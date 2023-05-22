@@ -61,7 +61,7 @@ export default function Cardcomponent({
       <div className="w-full md:w-[600px] max-h-96 h-fit bg-white border-2 border-black rounded-2xl p-4 md:flex-row justify-between">
         <div className="flex justify-between ">
           <div className="flex-col flex">
-            <h1 className="font-bold text-2xl">{truncatedTitle || "Joanna's Birthday"}</h1>
+            <h1 className="font-bold text-2xl">{truncatedTitle}</h1>
 
             <a
               href={location}
