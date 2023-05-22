@@ -37,6 +37,7 @@ const RequestList = ({}) => {
           type={request.type}
           notes={request.notes}
           location={request.location}
+          upvotes={request.upvotes}
         />
       );
     });
@@ -63,6 +64,7 @@ const RequestList = ({}) => {
           type={request.type}
           notes={request.notes}
           location={request.location}
+          upvotes={request.upvotes}
         />
       );
     });

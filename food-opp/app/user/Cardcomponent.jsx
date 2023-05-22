@@ -8,12 +8,14 @@ import {
   UserGroupIcon,
   Bars2Icon,
   ClockIcon,
+  HandThumbUpIcon
 } from '@heroicons/react/24/solid';
+
 import { MAX_NOTE_LENGTH, MAX_TITLE_LENGTH } from '@/src/consts/cardComponent';
 import { Button } from '@material-tailwind/react';
 import moment from 'moment';
 import toast from 'react-hot-toast';
-import { deleteEvent } from '@/src/api/events/events';
+import { deleteEvent, upvoteEvent } from '@/src/api/events/events';
 
 export default function Cardcomponent({
   requestId,
@@ -25,6 +27,7 @@ export default function Cardcomponent({
   type,
   notes,
   location,
+  upvotes
 }) {
   const truncatedTitle =
     name && name.length > MAX_TITLE_LENGTH
@@ -54,6 +57,26 @@ export default function Cardcomponent({
     };
 
     deleteRequest();
+  };
+
+  const handleUpvote = () => {
+      console.log("Doing Upvote " + upvotes);
+      const doUpvote = async (currentVote) => {
+          try {
+            const incrementedVotes = currentVote + 1;
+            console.log("Incrementing Upvote to " + incrementedVotes);
+            await upvoteEvent(requestId, incrementedVotes);
+            // TODO paint the new vote
+          } catch (error) {
+            toast.error(
+              `Could not upvote ${name ?? ''} due to error: ${JSON.stringify(
+                error
+              )}`
+            );
+      }
+    };
+
+      doUpvote(upvotes);
   };
 
   return (
@@ -91,8 +114,23 @@ export default function Cardcomponent({
         </div>
 
         <div className="flex mt-10 gap-4 justify-between">
+          <div className="flex w-1/5">
+          
+            <Button
+              color="white"
+              className="flex items-center h-6 w-15"
+              onClick={handleUpvote}
+            >
+              <HandThumbUpIcon color="#4661b0" className="flex items-center h-6 w-15" onClick={handleUpvote}/>
+            </Button>
+            <div>
+            <h1 className="font-bold">Likes</h1>
+            <p>{upvotes}</p>
+            </div>
+          </div>
+
           <div className="flex w-1/5 gap-2">
-            <UserGroupIcon className="h-6 w-6 text-blue-500" />
+          <UserGroupIcon className="h-6 w-6 text-blue-500" />
             <div>
               <h1 className="text-blue-500">People</h1>
               <p>{groupSize}</p>
@@ -114,6 +152,7 @@ export default function Cardcomponent({
               <div className="text-sm">{truncatedNotes}</div>
             </div>
           </div>
+
         </div>
       </div>
     </div>

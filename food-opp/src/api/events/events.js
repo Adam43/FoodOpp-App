@@ -1,5 +1,5 @@
 import { database } from '@/src/firebase/firebase';
-import { ref, child, remove, onValue } from 'firebase/database';
+import { ref, child, set, remove, onValue } from 'firebase/database';
 
 export const getAllEvents = async (setEventsCallback) => {
   const dbRef = ref(database);
@@ -39,5 +39,14 @@ export const deleteEvent = async (eventId) => {
     await remove(ref(database, `events/${eventId}`));
   } catch (error) {
     console.log('error trying to delete event ', error);
+  }
+};
+
+export const upvoteEvent = async (eventId, updatedVotes) => {
+  try {
+    console.log(`event id: `, eventId);
+    await set(ref(database, `events/${eventId}/upvotes`), updatedVotes);
+  } catch (error) {
+    console.log('error trying to upvote for an event ', error);
   }
 };
